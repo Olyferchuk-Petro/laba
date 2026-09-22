@@ -1,35 +1,30 @@
-# База даних користувачів зі списками оцінок
-users = {
-    "pedro": {"password": "123", "grades": [10, 11, 8, 4, 3, 12, 5]},
-    "sashak": {"password": "456", "grades": [3, 2, 4, 7, 8, 1, 4]},
-    "lemyr": {"password": "789", "grades": [12, 11, 10, 9, 12, 11]},
-    "romashka": {"password": "000", "grades": [2, 5, 6, 8, 3, 4, 10]}
+users = {                                                   # dict
+    "petro": {"password": "123", "grades": [10, 11, 8, 4, 3, 12, 5]},
+    "andrii": {"password": "456", "grades": [3, 2, 4, 7, 8, 1, 4]},
+    "olena": {"password": "789", "grades": [12, 11, 10, 9, 12, 11]},
+    "maksym": {"password": "000", "grades": [2, 5, 6, 8, 3, 4, 10]}
 }
 
-# Введення даних з клавіатури через термінал
-login = input("Введіть логін: ")
-password = input("Введіть пароль: ")
+login = input("Введіть логін: ")                            # str
+password = input("Введіть пароль: ")                        # str
 
-# Перевірка логіна та пароля
-if login in users and users[login]["password"] == password:
-    grades = users[login]["grades"]
-
+if login in users and users[login]["password"] == password: # bool
+    grades = users[login]["grades"]                         # list
+    
     print("Вхід успішний!")
     print("Всі виставлені оцінки:", grades)
+    
+    zadovilno = 0                                           # int
+    nezadovilno = 0                                         # int
+    
+    for grade in grades:                                    # int
+        if grade >= 5 and grade <= 12:                      # bool
+            zadovilno = zadovilno + 1                       # int
+        elif grade >= 1 and grade <= 4:                     # bool
+            nezadovilno = nezadovilno + 1                   # int
 
-    # Лічильники для категорій оцінок
-    zadovilno = 0
-    nezadovilno = 0
-
-    # Цикл перебору списку оцінок
-    for grade in grades:
-        if grade >= 5 and grade <= 12:
-            zadovilno = zadovilno + 1
-        elif grade >= 1 and grade <= 4:
-            nezadovilno = nezadovilno + 1
-
-    # Виведення результатів підрахунку
     print("Кількість оцінок від 5 до 12 (задовільно):", zadovilno)
     print("Кількість оцінок від 1 до 4 (незадовільно):", nezadovilno)
 else:
     print("Невірний логін або пароль.")
+    
