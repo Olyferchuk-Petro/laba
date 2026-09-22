@@ -1,8 +1,8 @@
 users = {                                                   # dict
-    "petro": {"password": "123", "grades": [10, 11, 8, 4, 3, 12, 5]},
-    "andrii": {"password": "456", "grades": [3, 2, 4, 7, 8, 1, 4]},
-    "olena": {"password": "789", "grades": [12, 11, 10, 9, 12, 11]},
-    "maksym": {"password": "000", "grades": [2, 5, 6, 8, 3, 4, 10]}
+    "pedro": {"password": "123", "grades": [10, 11, 8, 4, 3, 12, 5]},
+    "sashak": {"password": "456", "grades": [3, 2, 4, 7, 8, 1, 4]},
+    "lemyr": {"password": "789", "grades": [12, 11, 10, 9, 12, 11]},
+    "rabchuk": {"password": "000", "grades": [2, 5, 6, 8, 3, 4, 10]}
 }
 
 login = input("Введіть логін: ")                            # str
